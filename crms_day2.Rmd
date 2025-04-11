@@ -1,0 +1,29 @@
+---
+title: "grrrr"
+author: "meg hilbert"
+date: "2025-04-11"
+output: html_document
+---
+
+```{r}
+#!/bin/bash
+#SBATCH --job-name=slurming
+#SBATCH --output=slurming.out
+#SBATCH --error=slurming.err
+#SBATCH --time=0-01:00:00
+#SBATCH --mail-user=hilbert.m@northeastern.edu 
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1 
+#SBATCH --mail-type=ALL
+#SBATCH --mem=1G 
+#SBATCH --cpus-per-task=1 
+
+# Make a new directory
+mkdir /home/hilbert.m/crms/day2_test
+
+# Navigate to that new directory
+cd /home/hilbert.m/crms/day2_test
+
+# Print a messge in a new file to confirm that this job ran
+echo “yoooo first slurm” > day2_test.txt
+```
